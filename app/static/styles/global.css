@@ -30,3 +30,33 @@ a {
 ul {
   list-style: none;
 }
+
+.tag {
+  padding: 0.45rem 0.75rem;
+  border-radius: 30px;
+  color: var(--secondary);
+  font-size: 0.75rem;
+  background: rgba(45, 212, 191, 0.1);
+  display: inline-block;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--primary);
+  font-size: 4.5vw;
+}
+@media (min-width: 769px) {
+  .link {
+    font-size: 1vw;
+  }
+}
+.link span {
+  font-size: 3.5vw;
+}
+@media (min-width: 769px) {
+  .link span {
+    font-size: 0.8vw;
+  }
+}
