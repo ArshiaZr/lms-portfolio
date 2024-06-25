@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  /* Colors */
+  --primary: #e5e7eb;
+  --primary-body: #94a3b8;
+  --secondary: #5eead4;
+}
+ul {
+  list-style: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  /* Colors */
+  --primary: #e5e7eb;
+  --primary-body: #94a3b8;
+  --secondary: #5eead4;
+}
+ul {
+  list-style: none;
+}
