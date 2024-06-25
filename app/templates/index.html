@@ -93,6 +93,60 @@
               practicing violin, immersing myself in music, or working out.
             </div>
           </div>
+          <div class="experienceContainer">
+            <div class="title">experiences</div>
+            <div class="wrapper">
+              <div class="resume">
+                <a href="/docs/resume.pdf" target="__blank">
+                  <p>View Full Résumé</p>
+                  <GoArrowUpRight />
+                </a>
+              </div>
+              <div class="experiencesWrapper">
+                {% for experience in experiences %}
+                <div class="experience">
+                  <div class="date">
+                    <!-- {/* {renderDate(startDate, endDate)} */} -->
+                    <!-- {renderDate(startDate, endDate)} -->
+                     {{ experience.startDate }} - {{ experience.endDate }}
+                  </div>
+                  <div class="details">
+                    <div class="roleAndCompany">
+                      <span>{{ experience.role }}</span>&nbsp;·&nbsp;<span
+                        >{{ experience.company }}</span
+                      >&nbsp;
+                      <GoArrowUpRight />
+                    </div>
+                    <div class="location">
+                      <span>{{ experience.location }}</span>
+                    </div>
+                    <ul class="bulletPoints">
+                      {% for each in experience.bulletPoints %}
+                      <li>·&nbsp;{{ each }}</li>
+                      {% endfor %}
+                    </ul>
+                    {% if experience.links|length > 0 %}
+                    <div class="links">
+                      {% for link in experience.links %}
+                      <a class="link" href={{link.link}} target={{link.target}}>
+                        <i class="fa fa-paperclip"></i>
+                        <span>{{link.title}}</span>
+                      </Link>
+                      {% endfor %}
+                    </div>
+                    {% endif %} {% if experience.tags|length > 0 %}
+                    <div class="tags">
+                      {% for tag in experience.tags %}
+                      <div class="tag">{{tag}}</div>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
