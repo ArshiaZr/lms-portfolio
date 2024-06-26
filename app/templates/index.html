@@ -68,6 +68,10 @@
               <div class="line"></div>
               &nbsp;&nbsp;educations
             </li>
+            <li>
+              <div class="line"></div>
+              &nbsp;&nbsp;Locations
+            </li>
           </ul>
           <div class="socials">
             <a href="https://github.com/ArshiaZr" target="__blank">
@@ -237,6 +241,41 @@
                 </div>
                 {% endfor %}
               </div>
+            </div>
+          </div>
+          <div class="locations">
+            <div class="title">Places I Travled</div>
+            <div class="wrapper">
+              {% for location in locations %}
+              <div class="location">
+                <div class="preview">
+                  <div class="visualWrapper">
+                    {% if location.image|length > 0 %}
+                    <img src="{{location.image}}" alt="{{title}}" />
+                    {% endif %} {% if location.video|length > 0 %}
+                    <video src="{{location.video}}" autoplay loop muted></video>
+                    {% endif %} {% if location.map|length > 0 %}
+                    <iframe
+                      width="600"
+                      height="450"
+                      style="border: 0"
+                      loading="lazy"
+                      allowfullscreen
+                      referrerpolicy="no-referrer-when-downgrade"
+                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBtJ7CkdIseQCfb9U8YJYdjij-8U21ZnHQ
+    &q={{location.map}}"
+                    >
+                    </iframe>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="details">
+                  <div class="title">
+                    <span>{{location.title}}</span>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
             </div>
           </div>
         </div>

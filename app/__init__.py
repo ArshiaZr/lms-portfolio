@@ -107,9 +107,27 @@ educations = [
   },
 ]
 
+locations = [
+    {
+        "title": "Mississaugua, Canada",
+        "map": "Mississaugua+Ontario+Canada"
+    },
+    {
+        "title": "Toronto, Canada",
+        "map": "Toronto+Ontario+Canada"
+    },
+    {
+        "title": "Toronto, Canada",
+        "map": "Toronto+Ontario+Canada"
+    },
+
+]
+
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", experiences=experiences, projects=projects, educations=educations, url=os.getenv("URL"))
+    return render_template('index.html', title="MLH Fellow", experiences=experiences,
+                            projects=projects, educations=educations, locations=locations
+                            , url=os.getenv("URL"))
 
 
 @app.route('/hobbies')
