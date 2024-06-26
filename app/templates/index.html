@@ -64,6 +64,10 @@
               <div class="line"></div>
               &nbsp;&nbsp;projects
             </li>
+            <li>
+              <div class="line"></div>
+              &nbsp;&nbsp;educations
+            </li>
           </ul>
           <div class="socials">
             <a href="https://github.com/ArshiaZr" target="__blank">
@@ -208,6 +212,31 @@
                 </div>
               </div>
               {% endfor %}
+            </div>
+          </div>
+          <div class="educationsContainer">
+            <div class="title">educations</div>
+            <div class="wrapper">
+              <div class="educationWrapper">
+                {% for education in educations %}
+                <div class="educations">
+                  <div class="date">
+                    {{ education.startDate }} - {{ education.endDate }}
+                  </div>
+                  <div class="details">
+                    <div class="roleAndCompany">
+                      <span>{{ education.school }}</span>&nbsp;·&nbsp;<span
+                        >{{ education.location }}</span
+                      >&nbsp;
+                      <GoArrowUpRight />
+                    </div>
+                    <div class="location">
+                      <span>{{ education.program }}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>

@@ -97,9 +97,19 @@ hobbies = [
     },
 ]
 
+educations = [
+  {
+    "startDate": "09/2023",
+    "endDate": "present",
+    "school": "Toronto Metropolitan University",
+    "location": "Toronto, Canada",
+    "program": "Bachelor's in Computer Science, Minor in Mathematics",
+  },
+]
+
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", experiences=experiences, projects=projects, url=os.getenv("URL"))
+    return render_template('index.html', title="MLH Fellow", experiences=experiences, projects=projects, educations=educations, url=os.getenv("URL"))
 
 
 @app.route('/hobbies')
