@@ -126,7 +126,8 @@ locations = [
 @app.route('/')
 def index():
     return render_template('index.html', title="MLH Fellow", experiences=experiences,
-                            projects=projects, educations=educations, locations=locations
+                            projects=projects, educations=educations, locations=locations,
+                            googleMapsAPI=os.getenv("GOOGLE_MAPS_API_KEY")
                             , url=os.getenv("URL"))
 
 
