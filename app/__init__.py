@@ -79,6 +79,33 @@ projects = [
 ]
 
 
+hobbies = [
+    {
+        "name": "Reading",
+        "description": "I enjoy reading fiction and non-fiction books in my free time.",
+        "image": "/static/img/hobbies/01.jpeg"
+    },
+    {
+        "name": "Hiking",
+        "description": "Exploring nature trails and hiking in the mountains is one of my favorite activities.",
+        "image": "/static/img/hobbies/01.jpeg"
+    },
+    {
+        "name": "Cooking",
+        "description": "Experimenting with new recipes and cooking delicious meals is a passion of mine.",
+        "image": "/static/img/hobbies/01.jpeg"
+    },
+]
+
 @app.route('/')
 def index():
     return render_template('index.html', title="MLH Fellow", experiences=experiences, projects=projects, url=os.getenv("URL"))
+
+
+@app.route('/hobbies')
+def hobbies_page():
+    return render_template('hobbies.html', title="My Hobbies", hobbies=hobbies)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
