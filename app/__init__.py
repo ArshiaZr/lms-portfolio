@@ -48,6 +48,37 @@ experiences = [
 ]
 
 
+projects = [
+  {
+    "title": "InteliCourse",
+    "description":
+      "Delveloped IntelliCourse, an AI-driven platform for personalized learning aimed at achieving UnitedNations Goal 4 of Quality Education for all. Integrated ML-based embeddings to optimize AI tutors and quizzes, improving accessibility for dyslexiclearners across 50+ courses.",
+    "tags": ["React", "Next.js", "SCSS"],
+    "image": "/static/img/projects/01.png",
+    "video": "",
+    "demoLink": "https://github.com/lhlRahman/intelicourse",
+  },
+  {
+    "title": "SkillSync",
+    "description":
+      "Secured 1st place in the BFN Challenge, distinguishing Skill Sync as a platform for enhancing community engagement through volunteer matching, utilizing advanced Cohere AI technology for personalized opportunity searches. Achieved top 5 ranking at Cohere's competition and clinched 1st place at GoDaddy's challenge, highlighting Skill Sync's innovative use of AI for connecting volunteers with skill-enhancing opportunities",
+    "tags": ["React", "Next.js", "SCSS"],
+    "image": "/static/img/projects/02.png",
+    "video": "",
+    "demoLink": "https://github.com/lhlRahman/skillsync/",
+  },
+  {
+    "title": "MyCMS",
+    "description":
+      "Developed a CMS using Node.js and Next.js for efficient content creation, management, and publication. Increased customer acquisition by 23%, generating $10,000+ annually. Integrated Caddy web server as a reverse proxy with HTTPS support for secure and reliable access.",
+    "tags": ["React", "Next.js", "SCSS"],
+    "image": "/static/img/projects/03.gif",
+    "video": "",
+    "demoLink": "https://github.com/ArshiaZr/MyCMS",
+  },
+]
+
+
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", experiences=experiences, url=os.getenv("URL"))
+    return render_template('index.html', title="MLH Fellow", experiences=experiences, projects=projects, url=os.getenv("URL"))

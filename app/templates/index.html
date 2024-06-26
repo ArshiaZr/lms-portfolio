@@ -106,9 +106,7 @@
                 {% for experience in experiences %}
                 <div class="experience">
                   <div class="date">
-                    <!-- {/* {renderDate(startDate, endDate)} */} -->
-                    <!-- {renderDate(startDate, endDate)} -->
-                     {{ experience.startDate }} - {{ experience.endDate }}
+                    {{ experience.startDate }} - {{ experience.endDate }}
                   </div>
                   <div class="details">
                     <div class="roleAndCompany">
@@ -128,10 +126,14 @@
                     {% if experience.links|length > 0 %}
                     <div class="links">
                       {% for link in experience.links %}
-                      <a class="link" href={{link.link}} target={{link.target}}>
+                      <a
+                        class="link"
+                        href="{{link.link}}"
+                        target="{{link.target}}"
+                      >
                         <i class="fa fa-paperclip"></i>
                         <span>{{link.title}}</span>
-                      </Link>
+                      </a>
                       {% endfor %}
                     </div>
                     {% endif %} {% if experience.tags|length > 0 %}
@@ -145,6 +147,57 @@
                 </div>
                 {% endfor %}
               </div>
+            </div>
+          </div>
+          <div class="projects">
+            <div class="title">projects</div>
+            <div class="wrapper">
+              {% for project in projects %}
+              <div class="project">
+                <div class="preview">
+                  <div class="visualWrapper">
+                    {% if project.image|length > 0 %}
+                    <img src="{{project.image}}" alt="{{title}}" />
+                    {% endif %} {% if project.video|length > 0 %}
+                    <video src="{{project.video}}" autoplay loop muted></video>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="details">
+                  <div class="title">
+                    <span>{{project.title}}</span>
+                    {% if project.demoLink|length > 0 %}
+                    <GoArrowUpRight />
+                    {% endif %}
+                  </div>
+
+                  <div class="description">
+                    <p>{{project.description}}</p>
+                  </div>
+
+                  {% if project.links|length > 0 %}
+                  <div class="links">
+                    {% for link in project.links %}
+                    <a
+                      class="link"
+                      href="{{link.link}}"
+                      target="{{link.target}}"
+                    >
+                      <i class="fa fa-paperclip"></i>
+                      <span>{{link.title}}</span>
+                    </a>
+                    {% endfor %}
+                  </div>
+                  {% endif %} {% if project.tags|length > 0 %}
+                  <div class="tags">
+                    {% for tag in project.tags %}
+                    <div class="tag">{{tag}}</div>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
