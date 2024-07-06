@@ -47,7 +47,6 @@ experiences = [
   },
 ]
 
-
 projects = [
   {
     "title": "InteliCourse",
@@ -77,7 +76,6 @@ projects = [
     "demoLink": "https://github.com/ArshiaZr/MyCMS",
   },
 ]
-
 
 hobbies = [
     {
