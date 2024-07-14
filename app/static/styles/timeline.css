@@ -1,0 +1,129 @@
+#timeline {
+  width: 100vw;
+  min-height: 40rem;
+  height: 100vh;
+  padding: 10rem 5rem;
+}
+
+#timeline .mainTitle {
+  position: relative;
+  color: var(--primary);
+  font-size: 3vw;
+  z-index: 1;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#timeline .contents {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#timelineForm {
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+#timelineForm .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#timelineForm .form-group label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #f2f2f2;
+}
+#timelineForm .form-group input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f2f2f2;
+}
+
+#timelineForm .form-group textarea {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f2f2f2;
+}
+
+#timelineForm button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f2f2f2;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#timelineForm button:hover {
+  background-color: #9c9c9c;
+}
+
+.timelines {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.timelines .title {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.timelines .timeline-contents {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.timelines .timeline-contents .timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #f2f2f2;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 18rem;
+  transition: all 0.2s;
+}
+
+.timelines .timeline-contents .timeline:hover {
+  background: #585858;
+}
+
+.timelines .timeline-contents .timeline .timeline-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timelines .timeline-contents .timeline .timeline-header .timeline-name {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.timelines .timeline-contents .timeline .timeline-header .timeline-email {
+  color: #f2f2f2;
+  font-size: 1rem;
+}
+
+.timelines .timeline-contents .timeline .timeline-content {
+  color: #f2f2f2;
+  font-size: 1rem;
+}

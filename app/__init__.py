@@ -172,6 +172,10 @@ def delete_time_line_post(id):
 def hobbies_page():
     return render_template('hobbies.html', title="My Hobbies", hobbies=hobbies)
 
+@app.route('/timeline')
+def timeline_page():
+    return render_template('timeline.html', API_URL="/api/timeline_post")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

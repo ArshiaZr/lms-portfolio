@@ -18,9 +18,9 @@
     />
 
     <link lang="css" rel="stylesheet" href="./static/styles/global.css" />
-    <link lang="css" rel="stylesheet" href="./static/styles/hobbies.css" />
+    <link lang="css" rel="stylesheet" href="./static/styles/timeline.css" />
 
-    <script src="./static/scripts/hobbies.js" defer></script>
+    <script src="./static/scripts/timelines.js" defer></script>
 
     <link
       rel="stylesheet"
@@ -30,35 +30,58 @@
     <title>{{ title }}</title>
   </head>
   <body>
-    <main id="hobbies">
+    <main id="timeline">
       <div class="background"></div>
       <nav id="navbar">
         <ul>
           <li>
             <a href="/">home</a>
           </li>
-          <li class="active">
+          <li>
             <a href="/hobbies">hobbies</a>
           </li>
-          <li>
+          <li class="active">
             <a href="/timeline">timeline</a>
           </li>
         </ul>
       </nav>
-      <h1 class="mainTitle">My Hobbies</h1>
+      <h1 class="mainTitle">Add Timeline</h1>
       <div class="contents">
-        <div class="wrapper">
-          {% for hobby in hobbies %}
-          <div class="hobbyWrapper">
-            <div class="hobbyImage">
-              <img src="{{hobby.image}}" alt="{{hobby.name}}" />
-            </div>
-            <div class="hobbyDescription">
-              <h2>{{ hobby.name }}</h2>
-              <p>{{ hobby.description }}</p>
-            </div>
+        <form id="timelineForm" action="{{API_URL}}" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
           </div>
-          {% endfor %}
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="content">Content</label>
+            <textarea
+              id="content"
+              name="content"
+              placeholder="Enter your content"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+        <div class="timelines">
+          <div class="title">Timelines</div>
+          <div class="timeline-contents"></div>
         </div>
       </div>
     </main>
