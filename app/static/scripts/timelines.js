@@ -1,5 +1,3 @@
-const url = "http://127.0.0.1:5000/api/timeline_post";
-
 document.addEventListener("DOMContentLoaded", () => {
   const contentsDiv = document.querySelector(".timeline-contents");
 

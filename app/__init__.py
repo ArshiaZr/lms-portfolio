@@ -135,7 +135,7 @@ def index():
     return render_template('index.html', title="MLH Fellow", experiences=experiences,
                             projects=projects, educations=educations, locations=locations,
                             googleMapsAPI=os.getenv("GOOGLE_MAPS_API_KEY")
-                            , url=os.getenv("URL"))
+                            , url=os.getenv("WEB_URL"))
 
 
 class TimelinePost(Model):
@@ -174,7 +174,7 @@ def hobbies_page():
 
 @app.route('/timeline')
 def timeline_page():
-    return render_template('timeline.html', API_URL="/api/timeline_post")
+    return render_template('timeline.html', API_URL=f"{os.getenv('WEB_URL')}/api/timeline_post")
 
 
 if __name__ == '__main__':
