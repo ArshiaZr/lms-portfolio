@@ -8,11 +8,15 @@ import datetime
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-        host=os.getenv("MYSQL_HOST"),
-        user=os.getenv("MYSQL_USER"),
-        password=os.getenv("MYSQL_PASSWORD"),
-        port=3306)
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb =SqliteDatabase('file:memory?mode=memory&cache=shared')
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+            host=os.getenv("MYSQL_HOST"),
+            user=os.getenv("MYSQL_USER"),
+            password=os.getenv("MYSQL_PASSWORD"),
+            port=3306)
 
 experiences = [
   {

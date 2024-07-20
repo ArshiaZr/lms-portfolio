@@ -34,14 +34,6 @@ class TestTimelinePost(unittest.TestCase):
       },
     ]
     
-    # Initial ID tests
-    # first_post = TimelinePost.create(name='John Doe', email='john@example.com', content='Hey gamers, it\'s me John')
-    # assert first_post.id == 1
-
-    # second_post = TimelinePost.create(name='Warren Yun', email='warren@mail.com', content='Sup guys. I like redbull')
-    # assert second_post.id == 2
-
-    # Test object creation in database
     cases = []
     for data in test_data:
       post = TimelinePost.create(name=data['name'], email=data['email'], content=data['content'])
