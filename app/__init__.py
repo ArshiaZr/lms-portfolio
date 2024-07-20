@@ -156,9 +156,20 @@ mydb.create_tables([TimelinePost])
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
+    
+    if 'name' not in request.form.keys():
+      return "<h1>Invalid name</h1>", 400
+    
+    if 'content' not in request.form.keys() or request.form['content'] == '':
+        return "<h1>Invalid content</h1>", 400
+    
+    if 'email' not in request.form.keys() or "@" not in request.form['email']:
+        return "<h1>Invalid email</h1>", 400
+    
     name=request.form['name']
     email=request.form['email']
     content=request.form['content']
+
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
     return model_to_dict(timeline_post)
 
