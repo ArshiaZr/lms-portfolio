@@ -17,7 +17,6 @@ else:
             user=os.getenv("MYSQL_USER"),
             password=os.getenv("MYSQL_PASSWORD"),
             port=3306)
-
 experiences = [
   {
     "startDate": "03/2024",
