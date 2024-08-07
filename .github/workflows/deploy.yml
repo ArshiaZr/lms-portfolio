@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  woekflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   deploy:
