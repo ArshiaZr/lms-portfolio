@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     name: "Deploy to VPS"
-    rus-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Configure SSH
         run: |
