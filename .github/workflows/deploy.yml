@@ -18,7 +18,7 @@ jobs:
           chmod 600 ~/.ssh/deploy-key.pem
           cat >> ~/.ssh/config <<END
           HOST my-vps
-            HostName
+            HostName $SSH_IP
             User $SSH_USER
             IdentityFile ~/.ssh/deploy-key.pem
             StrictHostKeyChecking no
@@ -28,5 +28,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_IP: ${{ secrets.SSH_IP }}
 
-      # - name: Print project root directory
-      #   run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && pwd'
+      - name: Print project root directory
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && pwd'
