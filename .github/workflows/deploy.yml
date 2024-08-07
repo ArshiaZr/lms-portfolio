@@ -28,10 +28,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_IP: ${{ secrets.SSH_IP }}
 
-      - name: Set redeploy-site.sh permissions
-        run: |
-          cd ${{ secrets.PROJECT_ROOT }}
-          chmod +x redeploy-site.sh
-
       - name: Deploy site
-        run: ssh my-vps '${{ secrets.PROJECT_ROOT }}/redeploy-site.sh'
+        run: ssh my-vps '~/redeploy-site.sh'
